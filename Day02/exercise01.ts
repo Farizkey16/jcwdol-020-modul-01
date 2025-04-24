@@ -115,7 +115,7 @@ console.log(messagePrintIf)
 
 // 2. Write a code to check whether a number is prime number or not
 
-let primeNumberCheck = 3;
+let primeNumberCheck = 5;
 let messagePrintPrime = ""
 
 
@@ -141,6 +141,25 @@ if (primeNumberCheck <= 1) {
 }
 
 console.log(messagePrintPrime)
+
+// bisa juga yang dihitung berapa kali habis dibagi, kalau misalnya hanya 2, bilangan prima. kalau lebih, bukan bilangan prima
+
+let countPrime = 0;
+let prime_num_check = 11;
+let messagePrintAgain: string = ""
+
+for (let i: number = 1; i <= prime_num_check; i++) {
+    if (prime_num_check % i === 0) {
+        countPrime++
+    }
+    if (countPrime === 2) {
+        messagePrintAgain = `${prime_num_check} is a prime number`
+    } else {
+        messagePrintAgain = `${prime_num_check} is NOT a prime number`
+    }
+}
+
+console.log(messagePrintAgain);
 
 
 // 3. Write a code to find the sum of the numbers 1 to N
@@ -183,3 +202,6 @@ for (let i = 0; i < fibonacci_limit; i++) {
 }
 
 console.log(firstFib)
+
+
+// Modul Git
