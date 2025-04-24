@@ -19,4 +19,35 @@ for (let i: number = 0; i < 5; i++) {
 
 /**
  * WHILE LOOP: digunakan untuk proses looping yang batasnya tidak pasti
+ * Aturan penulisan:
+ * 
+ * While(condition) {
+ *  code to execute
+ * }
  */
+
+let count: number = 0;
+
+while(count < 5){
+    console.log(`Loop ke-${count}`)
+    count++;
+}
+
+/**
+ * DO WHILE: sama cara kerjanya dengan while. Bedanya, DO WHILE pasti minimal akan dieksekusi 1 kali
+ * 
+ * aturan penulisan:
+ * 
+ * do {
+ *  code to executie
+ * } while (condition)
+ */
+
+let countB: number = 0;
+
+do {
+    console.log(`Loop ke-${countB}`)
+    countB++;
+} while (countB < 5)
+
+
