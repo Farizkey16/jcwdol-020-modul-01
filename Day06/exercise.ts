@@ -26,10 +26,9 @@ console.log(bmiMeasurement(88,171))
 
 // FizzBuzz problem
 
-function fizzBuzz(limit: number): (string | number)[]{
+function fizzBuzz(limit: number): string{
     const fizzBuzzOutput: any[] = []
     for (let n = 1; n <= limit; n++) {
-        
         if (n % 3 === 0 && n % 5 === 0) {
             fizzBuzzOutput.push("FizzBuzz");
         } else if (n % 5 === 0) {
@@ -40,7 +39,7 @@ function fizzBuzz(limit: number): (string | number)[]{
             fizzBuzzOutput.push(n);
         }
     }
-    return fizzBuzzOutput;
+    return fizzBuzzOutput.join(', ');
 }
 
 console.log(fizzBuzz(20));
