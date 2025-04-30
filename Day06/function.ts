@@ -68,12 +68,77 @@ function pengurangan(valueA: number, valueB: number){ // nama parameter di callb
     return valueA - valueB
 }
 
+//CallbackFn with arrow function
 console.log(renderCalculator(12, 5, pengurangan))
-renderCalculator(12, 5, function(nilaiA: number, nilaiB: number){
+renderCalculator(12, 5, (nilaiA: number, nilaiB: number) => {
     return nilaiA/nilaiB
-}) // ==> anonymoous function
+}) // ==> anonymous function
 
 // array.forEach(). array.map()
+
+// Class notes
+
+// Array.forEach(callback): mengakses setiap value pada suatu array 
+const nameList: string[] = ["Edo", "Kevin", "Marsel"];
+
+for (let i = 0; i < nameList.length; i++) {
+    console.log(i);
+    console.log(nameList[i])
+}
+
+nameList.forEach(function(value: string, index: number, arr: string[]) { // enggak perlu kaya for loop yang pake statement
+    console.log(index);
+    console.log(value);
+})
+
+// array.map(callback) : mengakses setiap value pada array dan membuat array baru dengan data tersebut
+
+let priceList: number[] = [2000, 20000, 200000, 2000000]; // ---> ["Rp2.000", "Rp20.000", "Rp200.000", "Rp2.000.000"]
+let new_priceList: string[] = priceList.map((currency: number, index: number) => {
+    return currency.toLocaleString("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0,
+    })
+})
+
+console.log(new_priceList);
+
+
+// Exercise : Coba pahami cara kerja forEach, lalu duplikasi ke dalam function yang kalian buat sendiri
+
+// Example
+let usia: number[] = [12, 17, 20];
+usia.forEach((value: number) => {
+    console.log(value);
+})
+
+function duplicateForEach(dataArray: any[], callback: any) {
+    for (let i = 0; i < dataArray.length; i++) {
+        callback(dataArray[i])
+    }
+    return console.log(dataArray)
+}
+
+function callData(value: number){
+    console.log(value)
+}
+
+// duplicateForEach(usia, (value: number) => { // callback-nya di sini anonymous, jadi hanya perlu di-refer di dalam function utama
+//     console.log(value)
+// })
+
+duplicateForEach(usia, callData)
+
+
+
+
+
+
+
+
+
+// Personal notes
 
 /**
  *  - .forEach() = does not transform the array, returns undefined. It's like, "for each item, perform xx action". Not building a new array, just performing an external action.
